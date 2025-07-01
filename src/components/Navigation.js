@@ -6,12 +6,12 @@ const Navigation = () => {
   return (
     <nav className="navigation">
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
+        <Link to="/react-app" className="nav-logo">
           AgriApp
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">
-            <Link to="/" className="nav-link">
+            <Link to="/react-app" className="nav-link">
               Home
             </Link>
           </li>
