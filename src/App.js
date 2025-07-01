@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import Home from './pages/Home';
+import DescripcionProyecto from './pages/DescripcionProyecto';
+import ConsultarCosechas from './pages/ConsultarCosechas';
+import CargarCosechas from './pages/CargarCosechas';
+import MiembrosAsociacion from './pages/MiembrosAsociacion';
+import CRMOportunidades from './pages/CRMOportunidades';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Navigation />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/descripcion" element={<DescripcionProyecto />} />
+            <Route path="/consultar-cosechas" element={<ConsultarCosechas />} />
+            <Route path="/cargar-cosechas" element={<CargarCosechas />} />
+            <Route path="/miembros" element={<MiembrosAsociacion />} />
+            <Route path="/crm" element={<CRMOportunidades />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
